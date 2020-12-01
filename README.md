@@ -1,4 +1,4 @@
-# MoreHeat
+# More Heat
 
 Add more ranks of most heat settings:
  - Hard Labor: +5 ranks, new max 200%
