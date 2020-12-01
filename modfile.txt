@@ -1,0 +1,4 @@
+Import "MoreHeat.lua"
+
+To "Game/Text/en/HelpText.en.sjson"
+SJSON "HelpText.en.sjson"
