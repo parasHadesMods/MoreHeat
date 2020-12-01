@@ -1,6 +1,6 @@
 # More Heat
 
-Add more ranks of most heat settings:
+Add more ranks of most heat settings, bringing the total available heat up to 100:
  - Hard Labor: +5 ranks, new max 200%
  - Convenience Fee: +2 ranks, new max 160%
  - Jury Summons: +3 ranks, new max 120%
@@ -9,7 +9,7 @@ Add more ranks of most heat settings:
  - Forced Overtime: +2 ranks, new max 80%
  - Heightened Security: +1 rank, new max 900%
  - Damage Control: +2 ranks
- - Tight Deadline: +1 rank, new min 3:00
+ - Tight Deadline: +2 ranks (3:00 and 1:00)
  
 Also makes Personal Liability available in non-Hell Mode saves.
 
