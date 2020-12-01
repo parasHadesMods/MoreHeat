@@ -12,3 +12,7 @@ Add more ranks of most heat settings:
  - Tight Deadline: +1 rank, new min 3:00
  
 Also makes Personal Liability available in non-Hell Mode saves.
+
+## Installing
+
+Requires the latest modimporter, including the bundled sjson support (_not_ the sjson module from pypi).
