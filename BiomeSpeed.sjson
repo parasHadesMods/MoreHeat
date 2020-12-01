@@ -1,0 +1,9 @@
+{
+  Texts = [
+    "_append"
+    {
+      Id = "BiomeSpeedShrineUpgrade_4"
+      DisplayName = "3:00"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  Texts = {
+    "_sequence" = 1
+    1420 = {
+      "_replace" = 1
+      Id = "TrapDamage"
+      DisplayName = "Heightened Security"
+      Description = "All {#BoldFormatGraft}{$Keywords.Traps} {#PreviousFormat}and {#BoldFormatGraft}Magma {#PreviousForma    t}deal {#TooltipPenaltyFormat}+{$TempTextData.BaseValue}% {#PreviousFormat}bonus damage per rank."
+    }
+  }
+}
