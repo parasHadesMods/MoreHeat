@@ -1,15 +1,16 @@
-# More Heat
+# 99 Problems
 
-Add more ranks of most heat settings, bringing the total available heat up to 100:
- - Hard Labor: +5 ranks, new max 200%
- - Convenience Fee: +2 ranks, new max 160%
- - Jury Summons: +3 ranks, new max 120%
- - Calisthenics Program: +3 ranks, new max 60%
- - Benefits Package: +2 ranks
- - Forced Overtime: +2 ranks, new max 80%
- - Heightened Security: +1 rank, new max 900%
- - Damage Control: +2 ranks
- - Tight Deadline: +2 ranks (3:00 and 1:00)
+Add more ranks of most heat settings, bringing the total available heat up to 99:
+ - Hard Labor: +5 ranks, up to 200%
+ - Convenience Fee: +2 ranks, up to 160%
+ - Jury Summons: +3 ranks, up to 120%
+ - Calisthenics Program: +3 ranks, up to 60%
+ - Benefits Package: +2 ranks, up to 4 packages
+ - Forced Overtime: +2 ranks, up to 80%
+ - Heightened Security: +1 rank, up to 900%
+ - Damage Control: +2 ranks, up to 4 shields
+ - Approval Process: +1 rank (ie. boons and hammers grant nothing)
+ - Tight Deadline: +1 rank, 3:00
  
 Also makes Personal Liability available in non-Hell Mode saves.
 
