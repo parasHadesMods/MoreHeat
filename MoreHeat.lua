@@ -17,13 +17,6 @@ ModUtil.LoadOnce(function()
   MetaUpgradeData.NoInvulnerabilityShrineUpgrade.GameStateRequirements = nil
 end)
 
-function MoreHeat.CloneFunction(func, wrapper)
-  local newEnv = {}
-  setmetatable(newEnv, {__index = _G})
-  local newFunc = load(string.dump(func), nil, "b", newEnv)
-  return wrapper(newEnv, newFunc)
-end
-
 function MoreHeat.WrapWithin(caller, callee, wrapper)
   local newEnv = {}
   setmetatable(newEnv, {__index = _G})
@@ -34,30 +27,23 @@ function MoreHeat.WrapWithin(caller, callee, wrapper)
   ModUtil.BaseOverride(caller, load(string.dump(_G[caller]), nil, "b", newEnv))
 end
 
-MoreHeat.CreateBoonLootButtons = MoreHeat.CloneFunction(CreateBoonLootButtons, function(env, func)
-  local originalIsMetaUpgradeSelected = env.IsMetaUpgradeSelected
-  env.IsMetaUpgradeSelected = function(name)
-    local components = ScreenAnchors.ChoiceScreen.Components
-    if name == "RerollPanelMetaUpgrade" and CalcNumLootChoices() == 0 then
-      components["RerollPanel"] = CreateScreenComponent({ Name = "ButtonClose", Scale = 0.7, Group = "Combat_Menu_TraitTray" })
-      Attach({ Id = components["RerollPanel"].Id, DestinationId = components.ShopBackground.Id, OffsetX = 0, OffsetY = 410 })
-      components["RerollPanel"].OnPressedFunctionName = "CancelUpgrade"
-      return false
-    else
-      return originalIsMetaUpgradeSelected(name)
-    end
+MoreHeat.WrapWithin("CreateBoonLootButtons", "IsMetaUpgradeSelected", function(baseFunc, name)
+  local components = ScreenAnchors.ChoiceScreen.Components
+  if name == "RerollPanelMetaUpgrade" and CalcNumLootChoices() == 0 then
+    components["RerollPanel"] = CreateScreenComponent({ Name = "ButtonClose", Scale = 0.7, Group = "Combat_Menu_TraitTray" })
+    Attach({ Id = components["RerollPanel"].Id, DestinationId = components.ShopBackground.Id, OffsetX = 0, OffsetY = 410 })
+    components["RerollPanel"].OnPressedFunctionName = "CancelUpgrade"
+    components["RerollPanel"].ControlHotkey = "Confirm"
+    return false
+  else
+    return baseFunc(name)
   end
-  return func
-end)
-
-ModUtil.BaseOverride("CreateBoonLootButtons", function( lootData, reroll )
-  return MoreHeat.CreateBoonLootButtons(lootData, reroll)
 end)
 
 function CancelUpgrade(screen, button)
   CloseUpgradeChoiceScreen( screen, button )
   wait( 0.2, RoomThreadName )
   if CheckRoomExitsReady( CurrentRun.CurrentRoom ) then
-    UnlockRoomExits( CurrentRun, CurrentRun,CurrentRoom )
+    UnlockRoomExits( CurrentRun, CurrentRun.CurrentRoom )
   end
 end
