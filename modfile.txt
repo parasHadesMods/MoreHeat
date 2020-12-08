@@ -1,3 +1,4 @@
+Load Priority 99
 Import "MoreHeat.lua"
 
 To "Game/Text/en/HelpText.en.sjson"
